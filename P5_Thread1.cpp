@@ -52,6 +52,7 @@ int main()
     t2.join();
     const auto end_time = high_resolution_clock::now();
     const duration<double> duration = end_time - start_time;
-    cout << "duration = " << duration.count() << endl;
+    // Duration without thread 0.52346  and duration with threads .256789
+    cout << "duration = " << duration.count() << endl;  
     return 0;
 }
