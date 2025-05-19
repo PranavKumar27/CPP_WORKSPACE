@@ -44,6 +44,19 @@ int main()
     //srv.sin_addr.s_addr = inet_addr("127.0.0.1");
     memset(&(srv.sin_zero),0,8);
 
+    int nOptVal = 0;
+    int nOptSize = sizeof(nOptVal);
+    nRet = setsockopt(nsocket,SOL_SOCKET,SO_REUSEADDR,(const char*)&nOptVal,nOptSize);
+    if(!nRet)
+    {
+        cout << "Set Sockopt is successful" << endl;
+    }
+    else
+    {
+        cout << "setsockOpt Failed" << endl;
+        WSACleanup();
+        exit(EXIT_FAILURE);
+    }
 
     /// Step 3: Binding the socket to local port
     nRet = bind(nsocket,(sockaddr*)&srv,sizeof(sockaddr));
@@ -51,6 +64,7 @@ int main()
     if(nRet<0)
     {
         cout << "Binding Failed" << endl;
+        WSACleanup();
         exit(EXIT_FAILURE);
     }
     else
@@ -64,6 +78,7 @@ int main()
     if(nRet<0)
     {
         cout << "Listener Failed" << endl;
+        WSACleanup();
         exit(EXIT_FAILURE);
     }
     else
@@ -104,10 +119,25 @@ int main()
         // select call un-sets all the file decriptor
         nRet = select(nmaxFd+1,&fr,&fw,&fe,&tv);
 
-        if(nRet>0)
+
+        if(nRet>0)  // or if(I
         {
             // When some one connects or communicates with Message
             // over a dedicated connection
+            cout << "Data on Port Processing ~ ~  ~ ~ ~" << endl;
+            if(FD_ISSET(nsocket,&fe))
+            {
+                cout << "There is an exception Get away " << endl;
+            }
+            else if(FD_ISSET(nsocket,&fr))
+            {
+                cout << "Read to read Something new came up now" << endl;
+            }
+            else if(FD_ISSET(nsocket,&fw))
+            {
+                cout << "Read to write " << endl;
+            }
+            break;
         }
         else if(nRet == 0)
         {
@@ -119,6 +149,7 @@ int main()
         {
             cout << "App failed" << endl;
             // It failed and application has some error
+            WSACleanup();
             exit(EXIT_FAILURE);
         }
         Sleep(2000);
