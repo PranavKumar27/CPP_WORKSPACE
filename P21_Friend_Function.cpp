@@ -2,6 +2,8 @@
 
 using namespace std;
 
+class Israel;
+
 class India
 {
 private:
@@ -18,6 +20,11 @@ public:
     }
     friend class Israel;
     friend bool check_with_Russia(India ind);
+    bool talk_to_India(Israel& talks)
+    {
+        cout << "India and Israel Jointly Make S500, S700 Defence Systems" << endl;
+    }
+
 };
 
 bool check_with_Russia(India attack)
@@ -25,6 +32,7 @@ bool check_with_Russia(India attack)
     cout << "India indegenious in Launching Tejas Key as " << attack.Tejas_missile_key  << " ------> "<< endl;
     cout << "India indegenious  in Launching Brahmos Key as " << attack.Brahmos_missile_key << " ------> " << endl;
     cout << "Russia help in Launching Rafael Key as " << attack.Rafale_key << " ------> " << endl;
+    return true;
 }
 
 class Israel
@@ -42,8 +50,11 @@ public:
         cout << "Launching Rafael Key as " << attack.Rafale_key << " ------> " << endl;
         cout << "Launching S400 Defence Key as " << S400_missile_key << " ------> " << endl;
     }
-
+    friend bool talk_to_India(Israel& talks);
 };
+
+
+
 
 int main()
 {
@@ -54,5 +65,8 @@ int main()
 
     cout << "##################################  Friend Function check with Russia ##################################  " << endl;
     check_with_Russia(attack);
+    cout << "##################################  Friend Function check with Israel ##################################  " << endl;
+
+    attack.talk_to_India(Is);
     return 0;
 }
