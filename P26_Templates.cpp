@@ -38,7 +38,7 @@ int sum()
 {
     return 0;
 }
-
+// Variadic Template
 template <typename T,typename... Args> T sum(T first,Args... args)
 {
     // Recursive call with remaining args
