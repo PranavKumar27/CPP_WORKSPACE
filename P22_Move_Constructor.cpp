@@ -16,7 +16,7 @@ public:
     {
         val = new int;
         *val = v;
-        cout << "Parameterized Constructor Called" << endl;
+        cout << "Parameterized Constructor Called val= " << *val << endl;
     }
     Base(Base&& obj) noexcept
     {
@@ -52,20 +52,20 @@ public:
 };
 
 
-
 int main()
 {
-    cout << "$$$$$$$$$$$$$$   Move Constructor" << endl;
+    cout << "$$$$$$$$$$$$$$  " << endl;
 
 
-   // int v = 5;
-    //Base obj1;
-    //Base obj2(v);
-    //Base obj3(Base{10});
+    int v = 5;
+    Base obj1(v);
+    Base &b_lvalue = obj1;
+    Base &&b_rvalue = Base(60);
+    Base obj2=move(b_lvalue);
 
 
     vector<Base> vB;
-    vB.reserve(2);
+    //vB.reserve(2);
     vB.push_back(Base(10));
     vB.push_back(Base{20});
 
