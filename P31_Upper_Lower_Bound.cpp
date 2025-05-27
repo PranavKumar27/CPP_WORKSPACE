@@ -40,3 +40,18 @@ int main()
 
     return 0;
 }
+
+
+// Output
+
+/*
+
+Upper and Lower Bounds
+Upper Bound Key = 12 val = 4
+Upper Bound Key = 22 val = 33
+Upper Bound Key = 5 val = 6487760
+Lower Bound Key = 5 val = 66
+Lower Bound Key = 12 val = 4
+Lower Bound Key = 5 val = 6487760
+
+*/
