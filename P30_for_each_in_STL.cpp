@@ -63,3 +63,23 @@ int main()
 
     return 0;
 }
+
+
+// OUTPUT
+
+/*
+For Each Test
+
+ Arr =
+5,3,4,1,2,
+ Increase by 2
+10,6,8,2,4,
+ Increase by 3
+15,9,12,3,6,
+ Increase by n = 10
+15,13,14,11,12,
+ Increase by n = 100
+500,300,400,100,terminate called after throwing an instance of 'int
+
+
+*/
