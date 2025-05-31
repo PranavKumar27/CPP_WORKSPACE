@@ -13,7 +13,7 @@ int run(int n)
     // update common data
     
     m.lock();
-    common_data = common_data+n;
+    common_data = common_data+1;
     cout << "common_data=" << common_data << endl;
     //this_thread::sleep_for(chrono::seconds(3));
     m.unlock();
@@ -54,3 +54,27 @@ int main()
 
     return 0;
 }
+
+/*
+Ouput as 
+
+common_data=541
+common_data=542
+common_data=543
+common_data=544
+common_data=545
+common_data=546
+common_data=547
+common_data=548
+common_data=common_data=550550
+
+common_data=551
+common_data=552
+common_data=553
+common_data=554
+common_data=555
+common_data=556
+common_data=557
+common_data=558
+
+*/
