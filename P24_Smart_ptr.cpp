@@ -43,7 +43,7 @@ int main()
     shared_ptr<Rectangle> Rect1( new Rectangle(11,22));
     cout << "Area of Rect1 = " << Rect1->area() << endl;
 
-    shared_ptr<Rectangle> Rect2 (new Rectangle(15,22));
+    shared_ptr<Rectangle> Rect2  = make_shared_ptr<Rectange>(new Rectangle(15,22);
     cout << "Area of Rect2 = " << Rect2->area() << endl;
 
     shared_ptr<Rectangle> Rect3 = Rect1;
