@@ -11,6 +11,10 @@ public:
         val = v;
         cout << "Parameterized Construct called" << endl;
     }
+    void print()
+    {
+        cout << "Increase val by 10 = " << val+10 << endl;
+    }
 };
 
 class Test
@@ -31,6 +35,8 @@ int main()
     cout << "Static Demo and Test" << endl;
     Test t;
     t.show_values();
+    
+    Test::b.print();
 
     return 0;
 }
