@@ -68,6 +68,14 @@ int main()
         cout << "The Rectangle object has been destroyed." << endl;
     }
 
+    shared_ptr<int> t(new int(10));
+    std::weak_ptr<int> wp = t;
+    if (auto sp = wp.lock()) {
+        // Object is still alive
+        std::cout << *sp << std::endl;
+    } else {
+        // Object has been destroyed
+    }
 
     //cout << weakRect->area() << endl;
     cout << "Use Count of Weak ptr R_ptr = " << weakRect.use_count() << endl;
