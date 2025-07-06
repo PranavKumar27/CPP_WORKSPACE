@@ -45,3 +45,15 @@ int main()
 
     return 0;
 }
+
+
+/*
+
+Output
+Isreal Attacks Terrorism With Indian Missiles
+Launching Tejas Key as TJXXX25 ------> 
+Launching Brahmos Key as MSXXXXRO20 ------> 
+Launching Rafael Key as @#$XXXX73K ------> 
+Launching S400 Defence Key as LXTYUIN77 ------> 
+
+*/
