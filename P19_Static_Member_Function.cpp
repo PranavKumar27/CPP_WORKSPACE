@@ -5,9 +5,11 @@ using namespace std;
 
 class Test
 {
-   static int x;  // Make x as const to make it immutable for the class
+    static int x;  // Make x as const to make it immutable for the class
+    public:
+   
    //static const int x;
-public:
+    Test(){}
     Test(int val)
     {
         x = val;
@@ -22,12 +24,21 @@ public:
     }
 };
 
+class NewTest
+{
+    public:
+    static Test obj;
+};
+
+Test NewTest::obj = Test(400);
+
 int Test::x=100;  // Must
 
 int main()
 {
+    cout << "<--- X at start for NewTest= " << NewTest::obj.getX() << endl;
     
-    cout << "X at start = " << Test::getX() << endl;
+    cout << "<######   X at start = " << Test::getX() << endl;
     
     Test t1(10);
     //cout << "X = " << Test::x << endl;
@@ -42,6 +53,12 @@ int main()
     cout << "t2.X non static Method = " << t2.getX_non_static() << endl;
     
     cout << "X at End = " << Test::getX() << endl;
+    
+    cout << "---> X at end for NewTest= " << NewTest::obj.getX() << endl;
+    
+    cout << "###### > X at end = " << Test::getX() << endl;
+    
+    
     
     return 0;
 }
