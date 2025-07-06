@@ -2,7 +2,13 @@
 #include <map>
 
 using namespace std;
-
+/*
+Upper Bound
+first element in a sorted range that is strictly greater than a given number
+Lower Bound
+first element in a sorted range that is not less than (i.e., greater than or equal to) a given value.
+*/
+    
 int main()
 {
     cout << "Upper and Lower Bounds" << endl;
@@ -52,6 +58,6 @@ Upper Bound Key = 22 val = 33
 Upper Bound Key = 5 val = 6487760
 Lower Bound Key = 5 val = 66
 Lower Bound Key = 12 val = 4
-Lower Bound Key = 5 val = 6487760
+Lower Bound Key = 5 val = 0
 
 */
