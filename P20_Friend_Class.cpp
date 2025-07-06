@@ -27,8 +27,9 @@ public:
     {
         S400_missile_key = "LXTYUIN77";
     }
-    void Launch_All_Missile_to_Enemy(India attack)
+    void Launch_All_Missile_to_Enemy()
     {
+        India attack; // Create obj since India is Friend, Can access India's Missile Input Keys
         cout << "Launching Tejas Key as " << attack.Tejas_missile_key  << " ------> "<< endl;
         cout << "Launching Brahmos Key as " << attack.Brahmos_missile_key << " ------> " << endl;
         cout << "Launching Rafael Key as " << attack.Rafale_key << " ------> " << endl;
@@ -38,10 +39,9 @@ public:
 
 int main()
 {
-    cout << "India Attacks Terrorism" << endl;
-    India attack;
+    cout << "Isreal Attacks Terrorism With Indian Missiles" << endl;
     Israel Is;
-    Is.Launch_All_Missile_to_Enemy(attack);
+    Is.Launch_All_Missile_to_Enemy();
 
     return 0;
 }
