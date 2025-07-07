@@ -101,3 +101,17 @@ int main()
 
     return 0;
 }
+
+/*
+x=4 y=8
+Lambda Functions
+10
+5,4,3,2,1,0,
+10,25,
+20,
+Before Sort
+1,2,4,5,3,
+After Sort
+5,4,3,2,1,
+first number divisible by 3 =6
+*/
